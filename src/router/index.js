@@ -1,13 +1,12 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const _import = require('./_import_' + process.env.NODE_ENV)
 // in development-env not use lazy-loading, because lazy-loading too many pages will cause webpack hot update too slow. so only in production use lazy-loading;
 // detail: https://panjiachen.github.io/vue-element-admin-site/#/lazy-loading
 
 Vue.use(Router)
 
 /* Layout */
-import Layout from '../views/layout/Layout'
+import Layout from '@/views/layout/Layout'
 
 /** note: submenu only apppear when children.length>=1
 *   detail see  https://panjiachen.github.io/vue-element-admin-site/#/router-and-nav?id=sidebar
@@ -28,18 +27,18 @@ import Layout from '../views/layout/Layout'
   }
 **/
 export const constantRouterMap = [
-  { path: '/login', component: _import('login/index'), hidden: true },
-  { path: '/404', component: _import('errorPage/404'), hidden: true },
-  { path: '/401', component: _import('errorPage/401'), hidden: true },
+  { path: '/login', component: () => import('@/views/login/index'), hidden: true },
+  { path: '/404', component: () => import('@/views/errorPage/404'), hidden: true },
+  { path: '/401', component: () => import('@/views/errorPage/401'), hidden: true },
   {
     path: '',
     component: Layout,
     redirect: 'dashboard',
     children: [{
       path: 'dashboard',
-      component: _import('dashboard/index'),
+      component: () => import('@/views/dashboard/index'),
       name: 'dashboard',
-      meta: { title: 'dashboard', icon: 'dashboard', noCache: true }
+      meta: { title: '欢迎使用', icon: 'dashboard', noCache: true }
     }]
   }
 ]
@@ -55,28 +54,35 @@ export const asyncRouterMap = [
     path: '/patients',
     component: Layout,
     children: [
-      { path: 'index', component: _import('newPatients/index'), name: 'newPatients', meta: { title: '患者管理', icon: 'people', noCache: true }}
+      { path: 'index', component: () => import('@/views/newPatients/index'), name: 'newPatients', meta: { title: '患者管理', icon: 'people', noCache: true }}
     ]
   },
   {
     path: '/clinic',
     component: Layout,
     children: [
-      { path: 'index', component: _import('clinic/index'), name: 'clinic', meta: { title: '门诊医生管理', icon: 'doctor1', noCache: true }}
+      { path: 'index', component: () => import('@/views/clinic/index'), name: 'clinic', meta: { title: '门诊医生管理', icon: 'doctor1', noCache: true }}
     ]
   },
   {
     path: '/design',
     component: Layout,
     children: [
-      { path: 'index', component: _import('design/index'), name: 'design', meta: { title: '设计医生管理', icon: 'doctor2', noCache: true }}
+      { path: 'index', component: () => import('@/views/design/index'), name: 'design', meta: { title: '设计医生管理', icon: 'doctor2', noCache: true }}
     ]
   },
   {
     path: '/factory',
     component: Layout,
     children: [
-      { path: 'index', component: _import('factory/index'), name: 'factory', meta: { title: '工厂管理', icon: 'factory', noCache: true }}
+      { path: 'index', component: () => import('@/views/factory/index'), name: 'factory', meta: { title: '工厂管理', icon: 'factory', noCache: true }}
+    ]
+  },
+  {
+    path: '/order',
+    component: Layout,
+    children: [
+      { path: 'index', component: () => import('@/views/order/index'), name: 'order', meta: { title: '订单管理', icon: 'documentation', noCache: true }}
     ]
   },
   {
@@ -84,7 +90,7 @@ export const asyncRouterMap = [
     component: Layout,
     children: [{
       path: 'index',
-      component: _import('svg-icons/index'),
+      component: () => import('@/views/svg-icons/index'),
       name: 'icons',
       meta: { title: 'icons', icon: 'icon', noCache: true }
     }]
@@ -100,8 +106,8 @@ export const asyncRouterMap = [
       icon: '404'
     },
     children: [
-      { path: '401', component: _import('errorPage/401'), name: 'page401', meta: { title: 'page401', noCache: true }},
-      { path: '404', component: _import('errorPage/404'), name: 'page404', meta: { title: 'page404', noCache: true }}
+      { path: '401', component: () => import('@/views/errorPage/401'), name: 'page401', meta: { title: 'page401', noCache: true }},
+      { path: '404', component: () => import('@/views/errorPage/404'), name: 'page404', meta: { title: 'page404', noCache: true }}
     ]
   },
   { path: '*', redirect: '/404', hidden: true }
