@@ -55,7 +55,6 @@
  - [手摸手，带你优雅的使用 icon](https://juejin.im/post/59bb864b5188257e7a427c09)
 
 
- 或者加入该群主 **[圈子](https://jianshiapp.com/circles/1209)** 楼主会经常分享一些技术相关的东西
 
  **如有问题请先看上述使用文档和文章，若不能满足，欢迎 issue 和 pr**
 
@@ -63,9 +62,6 @@
 
  **该项目不支持低版本浏览器(如ie)，有需求请自行添加polyfill [详情](https://github.com/PanJiaChen/vue-element-admin/wiki#babel-polyfill)**
 
- <p align="center">
-  <img width="900" src="https://wpimg.wallstcn.com/a5894c1b-f6af-456e-82df-1151da0839bf.png">
-</p>
 
 ## 功能
 ```
@@ -108,15 +104,6 @@
 ```
 
 ## 开发
-```bash
-# 克隆项目
-git clone https://github.com/PanJiaChen/vue-element-admin.git
-
-# 安装依赖
-npm install
-   
-# 建议不要用cnpm安装 会有各种诡异的bug 可以通过如下操作解决 npm 下载速度慢的问题
-npm install --registry=https://registry.npm.taobao.org
 
 # 启动服务
 npm run dev
@@ -149,20 +136,3 @@ npm run lint -- --fix
 
 更多信息请参考 [使用文档](https://panjiachen.github.io/vue-element-admin-site/#/zh-cn/deploy)
 
-## Changelog
-Detailed changes for each release are documented in the [release notes](https://github.com/PanJiaChen/vue-element-admin/releases).
-
-## Online Demo
-[在线 Demo](http://panjiachen.github.io/vue-element-admin)
-
-## Donate
-如果你觉得这个项目帮助到了你，你可以帮作者买一杯果汁表示鼓励 :tropical_drink:
-![donate](https://panjiachen.github.io/donate/donation.png)
-
-[Paypal Me](https://www.paypal.me/panfree23)
-
-## License
-
-[MIT](https://github.com/PanJiaChen/vue-element-admin/blob/master/LICENSE)
-
-Copyright (c) 2017-present PanJiaChen
