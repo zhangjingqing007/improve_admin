@@ -51,7 +51,7 @@ export default new Router({
 
 export const asyncRouterMap = [
   {
-    path: '/patients',
+    path: '/newPatients',
     component: Layout,
     children: [
       { path: 'index', component: () => import('@/views/newPatients/index'), name: 'newPatients', meta: { title: '患者管理', icon: 'people', noCache: true }}

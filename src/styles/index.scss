@@ -12,7 +12,15 @@ body {
   text-rendering: optimizeLegibility;
   font-family: Helvetica Neue, Helvetica, PingFang SC, Hiragino Sans GB, Microsoft YaHei, Arial, sans-serif;
 }
-
+ul,ol,li{
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font-weight: normal;
+  vertical-align: baseline;
+  list-style: none;
+}
 label {
   font-weight: 700;
 }
@@ -65,6 +73,9 @@ div:focus{
   float: left;
 }
 
+.p10{
+  padding: 10px;
+}
 .pr-5 {
   padding-right: 5px;
 }
@@ -137,7 +148,7 @@ code {
 }
 
 .pagination-container {
-  margin-top: 30px;
+  margin-top: 20px;
 }
 
 .text-center {
@@ -175,12 +186,17 @@ code {
 }
 
 .filter-container {
-  padding-bottom: 10px;
+  background: #f2f2f2;
+  padding: 10px 10px 0 10px;
   .filter-item {
     display: inline-block;
     vertical-align: middle;
     margin-bottom: 10px;
   }
+}
+
+.el-form-item{
+  margin-bottom: 10px;
 }
 
 //refine vue-multiselect plugin
@@ -191,3 +207,5 @@ code {
 .multiselect--active {
   z-index: 1000 !important;
 }
+
+
